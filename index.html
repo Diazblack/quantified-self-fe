@@ -3,19 +3,39 @@
 <head>
   <meta charset="utf-8">
   <title>Quantified Self - Diary</title>
+  <link rel="stylesheet" type="text/css" href='lib/foods.css'>
 </head>
 <body>
-  <h2> Foods </h2>
-  <table id="foodsTable">
-    <thead>
-      <th>Name</th>
-      <th>Calories</th>
-    </thead>
-    <tbody>
-    </tbody>
-  </table>
-<br>
-      <a href="foods.html"><button class="default-button">Create New</button></a>
+  <h1> Quanified Self </h1>
+  <button class="nav-button" disabled>Foods</button></a>
+  <button class="nav-button">Meal Diary</button></a>
+  <button class="nav-button">Calendar</button></a>
+
+  <div class-'row'>
+    <div class='column' style="background-color:#fcbf49">
+      <h3>Manage Foods</h3>
+      Name:<br>
+      <input id='foodName' type='text' placeholder='Enter a food name'><br>
+      Calories:<br>
+      <input id='foodCalorie' type='text' placeholder='Enter a calorie amount'><br>
+      <button class="default-button" id="addFood" onclick='postFood()'>Add Food</button></a>
+
+    </div>
+    <div class='column' style="background-color:#f77f00">
+      <h3> Filter by name: </h3>
+      <input id='filter' type='text' placeholder='Enter a food'>
+      <button class='button' id='filter-btn' onclick="filterFoods()">Filter</button><br><br>
+      <button class='button' id='no-filter-btn' onclick="displayAllFoods()">Clear Filter</button><br><br>
+      <table id='foodsTable'>
+        <thead id='foodsHead'>
+          <th>Name</th>
+          <th>Calories</th>
+        </thead>
+        <tbody id="foodsBody">
+        </tbody>
+      </table>
+    </div>
+  </div>
     <script
     src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'>
   </script>
