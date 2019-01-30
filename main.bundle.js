@@ -47,17 +47,15 @@
 	"use strict";
 
 	var getFoods = function getFoods() {
-		var _this = this;
 	  var url = "https://fast-meadow-36413.herokuapp.com/api/v1/foods";
 	  fetch(url).then(function (response) {
 	    return response.json();
 	  }).then(function (json_response) {
-	    _this.showFoods(json_response);
+	    undefined.showFoods(json_response);
 	  });
 	};
 
 	function showFoods(json_response) {
-	  debugger;
 	  var foodArray = json_response;
 	  var table = document.getElementById("foodsTable").getElementsByTagName('tbody')[0];
 
@@ -70,14 +68,32 @@
 	    var cell1 = row.insertCell(0);
 	    var cell2 = row.insertCell(1);
 	    var cell3 = row.insertCell(2);
-
+	    row.id = name;
 	    cell1.innerHTML = name;
 	    cell2.innerHTML = calories;
 	    cell3.innerHTML = food_id;
 	  });
 	}
 
-	window.onload = getFoods;
+	function filterFoods() {
+	  var food = document.getElementById("filter").value;
+
+	  var foodTable = document.getElementById("foodsTable");
+	  for (var i = 0, row; row = foodTable.rows[i]; i++) {
+	    row.style.display = 'none';
+	  }
+	  foodTable.rows[0].style.display = 'table-row';
+	  document.getElementById("" + food).style.display = 'table-row';
+	}
+
+	function displayAllFoods() {
+	  var foodTable = document.getElementById("foodsTable");
+	  for (var i = 0, row; row = foodTable.rows[i]; i++) {
+	    row.style.display = 'table-row';
+	  }
+	}
+
+	$(window).load(getFoods);
 
 /***/ })
 /******/ ]);
