@@ -58,6 +58,7 @@
 	}
 
 	function showFoods(json_response) {
+	  debugger;
 	  var foodArray = json_response;
 	  var table = document.getElementById("foodsTable").getElementsByTagName('tbody')[0];
 
@@ -70,12 +71,13 @@
 	    var cell1 = row.insertCell(0);
 	    var cell2 = row.insertCell(1);
 	    var cell3 = row.insertCell(2);
-	    row.id = name;
+
 	    cell1.innerHTML = name;
 	    cell2.innerHTML = calories;
 	    cell3.innerHTML = food_id;
 	  });
 	}
+
 
 	function filterFoods() {
 	  var food = document.getElementById("filter").value;
@@ -96,6 +98,7 @@
 	}
 
 	$(window).load(getFoods());
+
 
 /***/ })
 /******/ ]);
