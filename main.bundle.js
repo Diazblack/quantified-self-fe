@@ -46,14 +46,16 @@
 
 	"use strict";
 
-	var getFoods = function getFoods() {
+	function getFoods() {
+	  var _this = this;
+
 	  var url = "https://fast-meadow-36413.herokuapp.com/api/v1/foods";
 	  fetch(url).then(function (response) {
 	    return response.json();
 	  }).then(function (json_response) {
-	    undefined.showFoods(json_response);
+	    _this.showFoods(json_response);
 	  });
-	};
+	}
 
 	function showFoods(json_response) {
 	  var foodArray = json_response;
@@ -93,7 +95,7 @@
 	  }
 	}
 
-	$(window).load(getFoods);
+	$(window).load(getFoods());
 
 /***/ })
 /******/ ]);
