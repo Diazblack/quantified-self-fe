@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #eae2b7;
+}
+
+.delete-btn{
+  background-color: #d62828;
+  color: white;
+}
+
+.nav-button{
+  float: left;
+  border: 1px solid white;
+  width: 33.3%;
+  background-color: #f77f00;
+  color: #FFFFFF;
+  font-size: 20px;
+  padding: 10px;
+}
+
+.nav-button:disabled {
+  background-color: #fcbf49;
+}
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
