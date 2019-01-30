@@ -46,15 +46,16 @@
 
 	"use strict";
 
-	var getFoods = function getFoods() {
-		var _this = this;
+	function getFoods() {
+	  var _this = this;
+
 	  var url = "https://fast-meadow-36413.herokuapp.com/api/v1/foods";
 	  fetch(url).then(function (response) {
 	    return response.json();
 	  }).then(function (json_response) {
 	    _this.showFoods(json_response);
 	  });
-	};
+	}
 
 	function showFoods(json_response) {
 	  debugger;
@@ -77,7 +78,27 @@
 	  });
 	}
 
-	window.onload = getFoods;
+
+	function filterFoods() {
+	  var food = document.getElementById("filter").value;
+
+	  var foodTable = document.getElementById("foodsTable");
+	  for (var i = 0, row; row = foodTable.rows[i]; i++) {
+	    row.style.display = 'none';
+	  }
+	  foodTable.rows[0].style.display = 'table-row';
+	  document.getElementById("" + food).style.display = 'table-row';
+	}
+
+	function displayAllFoods() {
+	  var foodTable = document.getElementById("foodsTable");
+	  for (var i = 0, row; row = foodTable.rows[i]; i++) {
+	    row.style.display = 'table-row';
+	  }
+	}
+
+	$(window).load(getFoods());
+
 
 /***/ })
 /******/ ]);
