@@ -47,24 +47,26 @@
 	"use strict";
 
 	var getFoods = function getFoods() {
+		var _this = this;
 	  var url = "https://fast-meadow-36413.herokuapp.com/api/v1/foods";
 	  fetch(url).then(function (response) {
 	    return response.json();
 	  }).then(function (json_response) {
-	    undefined.showFoods(json_response);
+	    _this.showFoods(json_response);
 	  });
 	};
 
 	function showFoods(json_response) {
+	  debugger;
 	  var foodArray = json_response;
-	  var table = document.getElementById("foodsTable");
+	  var table = document.getElementById("foodsTable").getElementsByTagName('tbody')[0];
 
 	  foodArray.forEach(function (food) {
 	    var name = food['name'];
 	    var calories = food['calories'];
 	    var food_id = food['id'];
 	    food_id = "<button class='button' id='" + food_id + "' onclick=\"removeFood()\">-</button>";
-	    var row = table.insertRow(1);
+	    var row = table.insertRow(0);
 	    var cell1 = row.insertCell(0);
 	    var cell2 = row.insertCell(1);
 	    var cell3 = row.insertCell(2);
