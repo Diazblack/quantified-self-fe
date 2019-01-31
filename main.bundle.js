@@ -82,6 +82,58 @@
 	  });
 	}
 
+	function editFood(id) {
+	  var food_id = id;
+	  var name_value = document.getElementById(food_id + "-name").innerHTML;
+	  var food_name_input = "<input id='edit-name' value=" + name_value + ">";
+	  var calories_value = document.getElementById(food_id + "-calories").innerHTML;
+	  var food_calories_input = "<input id='edit-calories' value=" + calories_value + ">";
+
+	  document.getElementById(food_id + "-edit").style.display = "none";
+	  document.getElementById(food_id + "-save").style.display = "block";
+	  document.getElementById(food_id + "-name").innerHTML = food_name_input;
+	  document.getElementById(food_id + "-calories").innerHTML = food_calories_input;
+	}
+
+	function saveFood(id) {
+	  var _this3 = this;
+
+	  var food_id = id;
+
+	  var url = "https://fast-meadow-36413.herokuapp.com/api/v1/foods/" + food_id;
+	  var payload = {
+	    "food": {
+	      "name": document.getElementById("edit-name").value,
+	      "calories": document.getElementById("edit-calories").value
+	    }
+	  };
+
+	  fetch(url, {
+	    method: 'PATCH',
+	    headers: { 'Accept': 'application/json',
+	      'Content-Type': 'application/json' },
+	    body: JSON.stringify(payload)
+	  }).then(function (response) {
+	    return response.json();
+	  }).catch(function (error) {
+	    return console.error(error);
+	  }).then(function (json_response) {
+	    return _this3.patchFoods(json_response);
+	  });
+	}
+
+	function patchFoods(json_response) {
+	  var food_id = json_response['id'];
+	  var updated_name = json_response['name'];
+	  var updated_calories = json_response['calories'];
+
+	  document.getElementById(food_id + "-edit").style.display = "block";
+	  document.getElementById(food_id + "-save").style.display = "none";
+
+	  document.getElementById(food_id + "-name").innerHTML = updated_name;
+	  document.getElementById(food_id + "-calories").innerHTML = updated_calories;
+	}
+
 	function showFoods(json_response) {
 	  var foodArray = json_response;
 	  var table = document.getElementById("foodsTable").getElementsByTagName('tbody')[0];
@@ -90,15 +142,20 @@
 	    var name = food['name'];
 	    var calories = food['calories'];
 	    var food_id = food['id'];
-	    food_id = "<button class='delete-btn' id='" + food_id + "' onclick=\"removeFood()\">-</button>";
+	    edit_food = "<button class='button' id=\"" + food_id + "-edit\" onclick=\"editFood(" + food_id + ")\">Edit</button>";
+	    save_food = "<button class='button' id=\"" + food_id + "-save\" onclick=\"saveFood(" + food_id + ")\" style=\"display: none;\">save</button>";
+	    delete_food = "<button class='delete-btn' id='" + food_id + "-del' onclick=\"removeFood()\">-</button>";
 	    var row = table.insertRow(0);
 	    var cell1 = row.insertCell(0);
 	    var cell2 = row.insertCell(1);
 	    var cell3 = row.insertCell(2);
+	    var cell4 = row.insertCell(3);
+
 	    row.id = name;
-	    cell1.innerHTML = name;
-	    cell2.innerHTML = calories;
-	    cell3.innerHTML = food_id;
+	    cell1.innerHTML = "<h4 id=\"" + food_id + "-name\">" + name + "</h4>";
+	    cell2.innerHTML = "<h4 id=\"" + food_id + "-calories\">" + calories + "</h4>";
+	    cell3.innerHTML = edit_food + save_food;
+	    cell4.innerHTML = delete_food;
 	  });
 	}
 
@@ -109,15 +166,19 @@
 	  var name = food['name'];
 	  var calories = food['calories'];
 	  var food_id = food['id'];
-	  food_id = "<button class='delete-btn' id='" + food_id + "' onclick=\"removeFood()\">-</button>";
+	  edit_food = "<button class='button' id='edit-" + food_id + "' onclick=\"editFood()\">Edit</button>";
+	  delete_food = "<button class='delete-btn' id='del-" + food_id + "' onclick=\"removeFood()\">-</button>";
 	  var row = table.insertRow(0);
 	  var cell1 = row.insertCell(0);
 	  var cell2 = row.insertCell(1);
 	  var cell3 = row.insertCell(2);
+	  var cell4 = row.insertCell(3);
+
 	  row.id = name;
 	  cell1.innerHTML = name;
 	  cell2.innerHTML = calories;
-	  cell3.innerHTML = food_id;
+	  cell3.innerHTML = edit_food;
+	  cell4.innerHTML = delete_food;
 	}
 
 	function filterFoods() {
