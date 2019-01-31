@@ -199,7 +199,7 @@
 	  }
 	}
 
-	$(window).load(getFoods());
+	$(document).on("load", getFoods());
 
 /***/ })
 /******/ ]);
