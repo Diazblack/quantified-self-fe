@@ -16,8 +16,39 @@
       <a href="calendar.html"><button class="nav-button">Calendar</button></a>
     </div><br><br>
 
-    <div class="meals">
-      <div>
+    <div class='Message'>
+      <h2 id='message-text'></h2>
+    </div>
+
+  <div class-'row'>
+    <div class='column'>
+      <br>
+      <h2> Add Food to A Meal </h2>
+      <button class="button">Create New Food</button>
+      <h3> Search foods by name: </h3>
+      <input id='filter' type='text' placeholder='Enter a food'>
+      <button class="button">Search for food</button><br><br>
+      <table id='foodTable'>
+        <thead id='foodsHead'>
+          <th>Name</th>
+          <th>Calories</th>
+        </thead>
+        <tbody id="foodsBody">
+        </tbody>
+      </table>
+
+      <h3> Add Selected to Meal: </h3>
+      <div class='quarter-column'>
+        <input type="button" class="button" id='breakfast-btn' value="Breakfast"><br><br>
+        <input type="button" class="button" id='snack-btn' value="Snack"><br><br>
+      </div>
+      <div class='quarter-column'>
+        <input type="button" class="button" id='lunch-btn' value="Lunch"><br><br>
+        <input type="button" class="button" id='dinner-btn' value="Dinner"><br><br>
+      </div>
+    </div>
+    <div class='column'>
+
         <table id='breakfastTable'>
           <caption><h2>Breakfast</h2></caption>
           <thead id='foodsHead'>
@@ -27,9 +58,7 @@
           <tbody id="foodsBody">
           </tbody>
         </table>
-      </div>
 
-      <div>
         <table id='snackTable'>
           <caption><h2>Snack</h2></caption>
           <thead id='foodsHead'>
@@ -39,9 +68,7 @@
           <tbody id="foodsBody">
           </tbody>
         </table>
-      </div>
 
-      <div>
         <table id='lunchTable'>
           <caption><h2>Lunch</h2></caption>
           <thead id='foodsHead'>
@@ -51,9 +78,7 @@
           <tbody id="foodsBody">
           </tbody>
         </table>
-      </div>
 
-      <div>
         <table id='dinnerTable'>
           <caption><h2>Dinner</h2></caption>
           <thead id='foodsHead'>
@@ -63,8 +88,8 @@
           <tbody id="foodsBody">
           </tbody>
         </table>
-      </div>
     </div>
+  </div>
     <script
     src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'>
   </script>
