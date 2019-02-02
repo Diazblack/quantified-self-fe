@@ -23,12 +23,15 @@
   <div class-'row'>
     <div class='column'>
       <br>
-      <h2> Add Food to A Meal </h2>
-      <button class="button">Create New Food</button>
-      <h3> Search foods by name: </h3>
+      <h2> Create A New Food</h2>
+        Name: <input id='foodName' type='text' placeholder='Enter a food name'><br>
+        Calories: <input id='foodCalorie' type='text' placeholder='Enter a calorie amount'><br>
+      <button class="button" onclick="createNewFood()">Create Food</button>
+      <h2> Search foods by name: </h2>
       <input id='filter' type='text' placeholder='Enter a food'>
       <button class="button" onclick="filterFoods()">Search for food</button><br><br>
       <button class='button' id='no-filter-btn' onclick="displayAllFoods()">Clear Filter</button><br><br>
+      <h2>Foods</h2>
       <table id='foodTable'>
         <thead id='foodsHead'>
           <th> </th>
