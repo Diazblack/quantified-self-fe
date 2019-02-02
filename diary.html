@@ -27,9 +27,11 @@
       <button class="button">Create New Food</button>
       <h3> Search foods by name: </h3>
       <input id='filter' type='text' placeholder='Enter a food'>
-      <button class="button">Search for food</button><br><br>
+      <button class="button" onclick="filterFoods()">Search for food</button><br><br>
+      <button class='button' id='no-filter-btn' onclick="displayAllFoods()">Clear Filter</button><br><br>
       <table id='foodTable'>
         <thead id='foodsHead'>
+          <th> </th>
           <th>Name</th>
           <th>Calories</th>
         </thead>
