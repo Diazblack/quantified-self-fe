@@ -32,9 +32,22 @@ table, th, td {
   font-size: 20px;
 }
 
+.edit-btn{
+  border-radius: 12px;
+  background-color: #003049;
+  color: #FFFFFF;
+  padding: 2px 25px;
+  font-size: 20px;
+}
+
 .header{
   background-color: #003049;
   padding: 1px;
+}
+
+.totals{
+  background-color: #fcbf49;
+  color: #FFFFFF;
 }
 
 .delete-btn{
