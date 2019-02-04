@@ -1,73 +1,45 @@
-# Quantified Self Front-end
+# Quantified Self Front End
+
+## Introduction
+This is a simple calorie counter app that allows users to add and edit foods in our database.  Users can also set caloric goals for meals and calculate totals after adding food to meals. Users will also have the option to save meals to their calendar so they can see which days they hit their goals.
 
 ## Initial Setup
 
-1. Clone this starter kit repository and rename the repository to `quantified-self-fe` in one command
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-  ```shell
-  git clone git@github.com:turingschool-examples/qs-fe-starter-kit.git quantified-self-fe
-  ```
-2. Change into the `quantified-self-fe` directory
+From GitHub clone down repository using the following commands in terminal:
+* `git clone git@github.com:Diazblack/quantified-self-fe.git`
+* `cd quantified-self-fe`
 
-3. Remove the default remote (origin)
+## How to Use
 
-  ```shell
-  git remote rm origin
-  ```
+### Running the Server Locally
 
-4. Create a new repository on GitHub named `quantified-self-fe`
+To run the server locally run:
+* `npm start`
 
-5. Add your new repository remote - **your remote URL and user name will be different in the command below**
-
-  ```shell
-  git remote add origin git@github.com:<YOUR GITHUB NAME>/quantified-self-fe.git
-  ```
-
-6. Install the dependencies of the starter kit
-
-  ```shell
-  npm install
-  ```
-
-7. Add, commit, and push up to your repository
-
-  ```shell
-  git add .
-  git commit -m "Initial commit using starter kit"
-  git push origin master
-  ```
-
-## Running the Server Locally
-
-To see your code in action locally, you need to fire up a development server. Use the command:
-
-```shell
-npm start
-```
-
-Once the server is running, visit in your browser:
-
+In your browser visit:
 * `http://localhost:8080/` to run your application.
 
-You will need to make sure that your Quantified Self API is also running at `http://localhost:3000`
+### Home Page
 
-## GitHub Pages Setup
+When a user first visits the page they see an index of foods already in the system. There is also a form to input information to add a new food.
+![Food Index](screenshots/FoodIndex.png)
 
-This site will be served from GitHub Pages in production.
+#### Filtering Foods
+A user can also enter a food name in the filter field and filter the results to show only food containing that searched term.  Clicking "Clear Filter" will remove the filter and show all food results.
+![Filter Food](screenshots/FilterFood.png)
 
-In order to see your application running on production:
+#### Editing Foods
+A user can also click on the Edit button next to a food to change the food name and calories. Once the edit button is clicked, the user will have the option to save their changes.
+![Edit Food](screenshots/EditFood.png)
 
-1. From the command line, run `npm run build`.
+## Known Issues
 
-2. Commit and push your application to GitHub.
 
-3. Visit your repository on Github
-
-4. Go to Settings
-
-5. Under the Github Pages section of Options, select 'master' as your source and click `Save`
-
-Be sure to `npm run build` and commit before each push to master. A few seconds after you push up, you should be able to see your application at <https://your-github-username.github.io/quantified-self-fe>.
+## Core Contributors
+* Cesar Jolibois - Github: [Diazblack](https://github.com/Diazblack)
+* Jennifer Lao - Github: [jplao](https://www.github.com/jplao)
 
 ## Built With
 
@@ -77,3 +49,6 @@ Be sure to `npm run build` and commit before each push to master. A few seconds 
 * [Mocha](https://mochajs.org/)
 * [Chai](https://chaijs.com/)
 
+## GitHub Pages Setup
+
+To view this project in production visit <https://diazblack.github.io/quantified-self-fe/>.
