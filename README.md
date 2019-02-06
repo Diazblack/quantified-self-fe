@@ -24,15 +24,56 @@ In your browser visit:
 ### Home Page
 
 When a user first visits the page they see an index of foods already in the system. There is also a form to input information to add a new food.
-![Food Index](screenshots/FoodIndex.png)
 
+![Food Index](screenshots/foodIndex.png)
+
+### Food Functionality
 #### Filtering Foods
 A user can also enter a food name in the filter field and filter the results to show only food containing that searched term.  Clicking "Clear Filter" will remove the filter and show all food results.
-![Filter Food](screenshots/FilterFood.png)
+
+![Filter Food](screenshots/filterFood.png)
 
 #### Editing Foods
 A user can also click on the Edit button next to a food to change the food name and calories. Once the edit button is clicked, the user will have the option to save their changes.
-![Edit Food](screenshots/EditFood.png)
+
+![Edit Food](screenshots/editFoodInputFields.png)
+
+#### Creating Foods
+A user can fill in the name and calories of a new food and click on "Add Food" to create a new food.  Once created, that new food will be added to the food list.
+
+![Create Food](screenshots/createFood.png)
+
+#### Deleting Foods
+A user can also click on the red button next to an individual food to delete it from the database.
+
+### Meal Diary
+A user can visit the meal diary page by clicking on Meal Diary.  Once on the diary page, A user will see a list of available foods and meals.
+
+![Meal Diary Index](screenshots/diaryIndex.png)
+
+#### Adding Food to Meals
+A user can use the radio buttons to select a food and then click on a button to add it to "breakfast", "snack", "lunch", or "dinner".
+
+![Select Food](screenshots/selectFood.png)
+
+Clicking on a meal button will add the selected food to that meal and a confirmation message will appear.
+
+![Add Food to Meal message](screenshots/addToMealMessage.png)
+
+#### Deleting Food from Meals
+A user can also delete a food from a meal by clicking on the red minus button next to a meal.
+
+![Snack Table](screenshots/snackMeal.png) ![Removed Food](screenshots/removeFoodFromSnack.png)
+
+#### Totals
+A user can see 3 calculated caloric totals at the bottom of the page.  "Goal Calories" is the calculated sum of the caloric goals for all meals.  "Consumed Calories" calculates the total calories of all foods added to meals.  "Remaining Calories" subtracts the total calories consumed from the goal calories to let a user know if they've reached their goal or not.
+
+![Caloric Totals](screenshots/totals.png)
+
+#### Setting Goals
+Each meal has a preset Calorie goal.  A user can change the caloric goal for an individual meal by clicking on "Edit".  An input field will appear and a user can enter a new caloric goal and click on "Save".  Changing the caloric goal will also change the calculated totals
+
+![New Goal](screenshots/newGoal.png)
 
 ## Known Issues
 

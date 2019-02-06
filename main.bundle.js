@@ -53,7 +53,7 @@
 	  fetch(url).then(function (response) {
 	    return response.json();
 	  }).then(function (json_response) {
-	    return _this.showFoods(json_response);
+	    _this.showFoods(json_response);
 	  });
 	}
 
@@ -105,17 +105,14 @@
 	}
 
 	function removeFood(id) {
-
 	  var _this4 = this;
 
 	  var url = "https://quantified-self-533.herokuapp.com/api/v1/foods/" + id;
-
 	  fetch(url, {
 	    method: 'DELETE',
 	    headers: { 'Accept': 'application/json',
 	      'Content-Type': 'application/json' }
 	  }).then(function (response) {
-
 	    return _this4.getFoods();
 	  }).catch(function (error) {
 	    return console.error(error);
@@ -133,7 +130,6 @@
 	  document.getElementById(food_id + "-save").style.display = "inline-block";
 	  document.getElementById(food_id + "-name").innerHTML = food_name_input;
 	  document.getElementById(food_id + "-calories").innerHTML = food_calories_input;
-
 	}
 
 	function patchFoods(json_response) {
