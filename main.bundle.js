@@ -53,7 +53,7 @@
 	  fetch(url).then(function (response) {
 	    return response.json();
 	  }).then(function (json_response) {
-	    _this.showFoods(json_response);
+	    return _this.showFoods(json_response);
 	  });
 	}
 
@@ -90,7 +90,7 @@
 	  var food_calories_input = "<input id='edit-calories' value=" + calories_value + ">";
 
 	  document.getElementById(food_id + "-edit").style.display = "none";
-	  document.getElementById(food_id + "-save").style.display = "block";
+	  document.getElementById(food_id + "-save").style.display = "inline-block";
 	  document.getElementById(food_id + "-name").innerHTML = food_name_input;
 	  document.getElementById(food_id + "-calories").innerHTML = food_calories_input;
 	}
@@ -122,12 +122,26 @@
 	  });
 	}
 
+	function removeFood(id) {
+	  var url = "https://fast-meadow-36413.herokuapp.com/api/v1/foods/" + id;
+	  fetch(url, {
+	    method: 'DELETE',
+	    headers: { 'Accept': 'application/json',
+	      'Content-Type': 'application/json' }
+	  }).then(function (response) {
+	    return response.json();
+	  }).catch(function (error) {
+	    return console.error(error);
+	  });
+	  getfoods();
+	}
+
 	function patchFoods(json_response) {
 	  var food_id = json_response['id'];
 	  var updated_name = json_response['name'];
 	  var updated_calories = json_response['calories'];
 
-	  document.getElementById(food_id + "-edit").style.display = "block";
+	  document.getElementById(food_id + "-edit").style.display = "inline-block";
 	  document.getElementById(food_id + "-save").style.display = "none";
 
 	  document.getElementById(food_id + "-name").innerHTML = updated_name;
@@ -143,8 +157,8 @@
 	    var calories = food['calories'];
 	    var food_id = food['id'];
 	    edit_food = "<button class='button' id=\"" + food_id + "-edit\" onclick=\"editFood(" + food_id + ")\">Edit</button>";
-	    save_food = "<button class='button' id=\"" + food_id + "-save\" onclick=\"saveFood(" + food_id + ")\" style=\"display: none;\">save</button>";
-	    delete_food = "<button class='delete-btn' id='" + food_id + "-del' onclick=\"removeFood()\">-</button>";
+	    save_food = "<button class='button' id=\"" + food_id + "-save\" onclick=\"saveFood(" + food_id + ")\" style=\"display: none;\">Save</button>";
+	    delete_food = "<button class='delete-btn' id='" + food_id + "-del' onclick=\"removeFood(" + food_id + ")\">-</button>";
 	    var row = table.insertRow(0);
 	    var cell1 = row.insertCell(0);
 	    var cell2 = row.insertCell(1);
