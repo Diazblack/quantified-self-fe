@@ -25,13 +25,13 @@ In your browser visit:
 
 When a user first visits the page they see an index of foods already in the system. There is also a form to input information to add a new food.
 
-![Food Index](screenshots/foodIndex.png)
+![Food Index](screenshots/FoodIndex.png)
 
 ### Food Functionality
 #### Filtering Foods
 A user can also enter a food name in the filter field and filter the results to show only food containing that searched term.  Clicking "Clear Filter" will remove the filter and show all food results.
 
-![Filter Food](screenshots/filterFood.png)
+![Filter Food](screenshots/FilterFood.png)
 
 #### Editing Foods
 A user can also click on the Edit button next to a food to change the food name and calories. Once the edit button is clicked, the user will have the option to save their changes.
