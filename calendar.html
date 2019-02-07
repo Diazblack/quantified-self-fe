@@ -11,10 +11,26 @@
     </div>
     <a href="index.html"><button class="nav-button">Foods</button></a>
     <a href="diary.html"><button class="nav-button">Meal Diary</button></a>
-    <a href="calendar.html"><button class="nav-button" disabled>Calendar</button></a>
+    <a href="calendar.html"><button class="nav-button" disabled>Calendar</button></a><br><br>
+    <h2>Saved Meals</h2>
+    <table id='calendarTable'>
+      <thead id='calendarHead'>
+        <th>Date</th>
+        <th>Goal Calories</th>
+        <th>Consumed Calories</th>
+        <th>Remaining Calories</th>
+        <th>Breakfast</th>
+        <th>Snacks</th>
+        <th>Lunch</th>
+        <th>Dinner</th>
+      </thead>
+      <tbody id="calendarBody">
+      </tbody>
+    </table>
       <script
         src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'>
       </script>
+      <script src="lib/calendar.js"></script>
       <script src="main.bundle.js"></script>
     </div>
   </body>
