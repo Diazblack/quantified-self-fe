@@ -75,8 +75,18 @@ Each meal has a preset Calorie goal.  A user can change the caloric goal for an 
 
 ![New Goal](screenshots/newGoal.png)
 
-## Known Issues
+#### Creating Calendar Entries
+Once meals and goals are set, a user can enter a date and click on "Save to Calendar".  This adds a new date to the calendar database with the meal and caloric info set by the user.
 
+### Calendar
+By visiting the Calendar page, a user can see their saved data.  The table shows the caloric info as well as the foods for each meal for each date that was saved.
+![Calendar Index](screenshots/CalendarIndex.png)
+
+
+## Known Issues
+* Validations have not been created to stop duplicate entries for foods nor calendar entry dates.
+
+* When editing a food with more than one word in its name, the name placeholder value when clicking on edit is only the first word of the food's name.
 
 ## Core Contributors
 * Cesar Jolibois - Github: [Diazblack](https://github.com/Diazblack)
